@@ -13,6 +13,7 @@ public class Picture
 {
     private Square wall;
     private Square window;
+    private Square grass;
     private Triangle roof;
     private Circle sun;
     private Circle moon;
@@ -30,6 +31,13 @@ public class Picture
      */
     public void draw()
     {
+        grass = new Square();
+        grass.changeColor("green");
+        grass.moveVertical(140);
+        grass.moveHorizontal(-350);
+        grass.changeSize(600);
+        grass.makeVisible();
+        
         wall = new Square();
         wall.moveHorizontal(-140);
         wall.moveVertical(20);
@@ -51,16 +59,20 @@ public class Picture
 
         sun = new Circle();
         sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
+        sun.moveHorizontal(-200);
+        sun.moveVertical(-150);
         sun.changeSize(80);
         sun.makeVisible();
         
         moon = new Circle();
         moon.changeColor("magenta");
         moon.moveHorizontal(-200);
+        moon.moveVertical(300);
         moon.changeSize(40);
         moon.makeVisible();
+        
+        sun.slowMoveVertical(370);
+        moon.slowMoveVertical(-350);
     }
 
     /**
