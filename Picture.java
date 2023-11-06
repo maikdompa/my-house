@@ -17,7 +17,8 @@ public class Picture
     private Triangle roof;
     private Circle sun;
     private Circle moon;
-    private Person human;
+    private Person humano;
+    private Person humane;
 
     /**
      * Constructor for objects of class Picture
@@ -75,17 +76,24 @@ public class Picture
         sun.slowMoveVertical(370);
         moon.slowMoveVertical(-350);
         
-        human = new Person();
-        human.changeColor("black");
-        human.moveVertical(40);
-        human.moveHorizontal(-300);
-        human.makeVisible();
+        humano = new Person();
+        humano.changeColor("black");
+        humano.moveVertical(40);
+        humano.moveHorizontal(-300);
+        humano.makeVisible();
+        
+        humane = new Person();
+        humane.changeColor("black");
+        humane.moveVertical(40);
+        humane.moveHorizontal(300);
+        humane.makeVisible();
     }
     
     public void amanecer() {
         moon.makeInvisible();
         sun.slowMoveVertical(-300);
-        human.slowMoveHorizontal(340);
+        humano.slowMoveHorizontal(340);
+        humane.slowMoveHorizontal(-450);
     }
 
     /**
